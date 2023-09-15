@@ -25,11 +25,14 @@ npm install identity-obj-proxy --save-dev
 	
 
 Trebuie rulate scripturile:
-1. Pentru bundling:
+1. Pentru instalare dependinte:
+npm install
+
+2. Pentru bundling:
 npm run rollup
 
-2. Pentru mediul de testare:
-npm run storybook
-
-2. Pentru testare:
+3. Pentru testare:
 npm run test
+
+4. Pentru mediul de testare:
+npm run storybook
