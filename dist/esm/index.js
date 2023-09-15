@@ -1,3 +1,9 @@
+function getDefaultExportFromCjs (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+var react = {exports: {}};
+
 var react_production_min = {};
 
 /**
@@ -2785,8 +2791,47 @@ function requireReact_development () {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  requireReact_production_min();
+  react.exports = requireReact_production_min();
 } else {
-  requireReact_development();
+  react.exports = requireReact_development();
 }
+
+var reactExports = react.exports;
+var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
+
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = "button{\n    font-size: 60px;\n}";
+styleInject(css_248z);
+
+const Button = (props) => {
+    return React.createElement("button", null, props.label);
+};
+
+export { Button };
 //# sourceMappingURL=index.js.map
