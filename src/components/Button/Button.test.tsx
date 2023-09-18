@@ -7,4 +7,10 @@ describe("Button", () => {
     test("renders the Button component", () => {
         render(<Button label="Test Btn"></Button>);
     })
+});
+
+describe("should fail", () => {
+    test("renders the Button component", () => {
+        fail('ttt');
+    })
 })
