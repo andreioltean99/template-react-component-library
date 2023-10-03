@@ -107,11 +107,15 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "jsx": "react",
     "module": "ESNext",
-    "declaration": true,
+    "declaration": false,
     "sourceMap": true,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true
-  }
+    "emitDeclarationOnly": false,
+  },
+  "include": [
+    // source code for project is one directory up from tsconfig.json
+    "../../src/**/*",
+  ]
 }

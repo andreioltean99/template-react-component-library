@@ -1,1 +1,2 @@
-export * from './components';
+import('./bootstrap');
+export * from './bootstrap';
