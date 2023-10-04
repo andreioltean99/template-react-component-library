@@ -37,7 +37,13 @@ export default [
         port: 3000,
         historyApiFallback: true
       }),
-      livereload({ watch: "dist" }),
+      livereload({ port: 3001, delay: 1 }),
     ],
+    watch: {
+      chokidar: {
+        usePolling: true
+      },
+      buildDelay: 1
+    }
   },
 ];

@@ -48,4 +48,4 @@ const mount = (el: Element, { onNavigate, defaultHistory, initialPath }: RouterC
 
 // We are running through container
 // and we should export the mount function
-export { default as Marketing } from './App';
+export { mount };

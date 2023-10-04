@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':3001/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 this.bundle = this.bundle || {};
 this.bundle.js = (function (exports) {
 	'use strict';
@@ -48264,12 +48264,12 @@ this.bundle.js = (function (exports) {
 
 	var bootstrap = /*#__PURE__*/Object.freeze({
 		__proto__: null,
-		Marketing: App
+		mount: mount
 	});
 
 	Promise.resolve().then(function () { return bootstrap; });
 
-	exports.Marketing = App;
+	exports.mount = mount;
 
 	return exports;
 
