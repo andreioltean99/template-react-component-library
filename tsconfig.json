@@ -108,14 +108,11 @@
     "jsx": "react",
     "module": "ESNext",
     "declaration": true,
+    "declarationDir": "types",
     "sourceMap": true,
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
-  },
-  "include": [
-    // source code for project is one directory up from tsconfig.json
-    "../../src/**/*",
-  ]
+  }
 }

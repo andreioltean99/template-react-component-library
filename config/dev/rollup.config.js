@@ -3,6 +3,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import replace from '@rollup/plugin-replace';
+import serve from "rollup-plugin-serve";
+import livereload from "rollup-plugin-livereload";
 
 const packageJson = require("../../package.json");
 
@@ -12,8 +14,8 @@ export default [
     output: [
       {
         file: "public/bundle.js",
-        format: 'iife',
         name: "bundle.js",
+        format: 'iife',
         sourcemap: true,
       }
     ],
@@ -23,9 +25,19 @@ export default [
       typescript({ tsconfig: "config/dev/tsconfig.json" }),
       postcss(),
       replace({
-        preventAssignment: false,
-        'process.env.NODE_ENV': '"development"'
-      })
+        preventAssignment: true,
+        'process.env.NODE_ENV': JSON.stringify( 'development' )
+      }),
+      serve({
+        open: true,
+        verbose: true,
+        contentBase: ["", "public"],
+        historyApiFallback: true,
+        host: "localhost",
+        port: 3000,
+        historyApiFallback: true
+      }),
+      livereload({ watch: "dist" }),
     ],
   },
 ];

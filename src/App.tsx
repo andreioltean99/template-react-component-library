@@ -9,10 +9,8 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = ({ history }) => {
-  console.log(history);
   return (
     <div>
-      Hello React!
       <Router history={history}>
         <Switch>
           <Route path="/pricing" component={Pricing} />

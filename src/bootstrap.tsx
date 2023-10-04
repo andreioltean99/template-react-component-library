@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createMemoryHistory, createBrowserHistory, InitialEntry, MemoryHistory, BrowserHistory, Listener } from 'history';
+import { createMemoryHistory, createBrowserHistory, InitialEntry, MemoryHistory } from 'history';
 import App from './App';
 
 interface RouterConfig {
     onNavigate?: () => {},
-     defaultHistory: MemoryHistory | BrowserHistory,
+     defaultHistory: MemoryHistory | any,
     initialPath: InitialEntry
 }
 
